@@ -1,0 +1,32 @@
+lab4 % Running to see the graphs for equation poly_equi
+y = @(x, a,b,c) a*x.^2 + b*x + c; % To set the equation and the variables in % equation poly
+y(1,1,-4,4)% Testing values in equation poly
+ans =
+     1 % Value I get with those four variables
+x = 0:1:10 % Set x values from 0 to 10 going 1 at a time
+x =
+     0     1     2     3     4     5     6     7     8     9    10 % 0 to 10
+y(x,1,-4,4) % Testing values in equation poly with the x of 0 to 10
+ans =
+     4     1     0     1     4     9    16    25    36    49    64 % Values 
+% for the y using the x values from 0 to 10 
+lab4 % Running to see the graph for equation poly
+y(2,1,-4,4) % Putting in values for the equation poly
+ans =
+     0 % Value for y when using those values
+lab4 % Running to see the value of the min_max
+min_max =
+     0 % Value of the min_max
+lab4 % Running to get the values for the x and y of the min/max
+     2 % Value for x
+     0 % Value for y
+lab4 % Running to see the output values
+x value where the min/max occurs is 1 % Gives output for x value
+value of the min/max is 3 % Gives output for the min/max
+clear % Clears the workspace
+clc % Clears the command window
+lab4 % Running last time to verify working
+x value where the min/max occurs is 1 % Gives output for x value
+value of the min/max is 3 % Gives output for y value
+diary off % Turns diary off
+

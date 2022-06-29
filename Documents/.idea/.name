@@ -1,0 +1,78 @@
+# 0 | 1 | 2
+#---|---|---
+# 3 | 4 | 5
+#---|---|---
+# 6 | 7 | 8
+import os
+class TicTacToe:
+
+	entries = "012345678";
+	usedEntries = [None] * 9;
+	board = '';
+	turn = 1;
+	gameOn = 1;
+
+	def displayBoard(self):
+		TicTacToe.board = " " + TicTacToe.entries[0] + " | " + str(TicTacToe.entries[1]) + " | " + str(TicTacToe.entries[2]) + "\n---|---|---" + "\n " + str(TicTacToe.entries[3]) + " | " + str(TicTacToe.entries[4]) + " | " + str(TicTacToe.entries[5]) + "\n---|---|---" + "\n " + str(TicTacToe.entries[6]) + " | " + str(TicTacToe.entries[7]) + " | " + str(TicTacToe.entries[8]);
+		print TicTacToe.board;
+
+	def updateEntries(self, mark, hit):
+		if ((mark > 8) or (mark < 0)): print "ERROR: PLEASE ENTER A VALID ENTRY."
+		elif TicTacToe.usedEntries[mark] == 'X' or TicTacToe.usedEntries[mark] == 'O': print "ERROR: SPOT ON BOARD TAKEN GO AGAIN."
+		else:
+			TicTacToe.entries = str(TicTacToe.entries[:mark]) + hit + str(TicTacToe.entries[mark+1:]);
+			TicTacToe.usedEntries[mark] = hit;
+			TicTacToe.turn += 1;
+
+	def winCheck(self):
+		index = 0;
+		found = 0;
+		while not found:
+			if(index == 3): #vertical
+				index = 0;
+				found = 1;
+			elif (TicTacToe.entries[index] == TicTacToe.entries[index + 3] == TicTacToe.entries[index + 6]):
+				TicTacToe.gameOn = 0;
+				found = 1;
+				print "Winner: Column " + str(index + 1) + ' ' + TicTacToe.entries[index];
+			else:
+				index += 1;
+		found = 0;
+		while not found:
+			if(index == 9): #horizontal
+				index = 0;
+				found = 1;
+			elif (TicTacToe.entries[index] == TicTacToe.entries[index + 1] == TicTacToe.entries[index + 2]):
+				TicTacToe.gameOn = 0;
+				found = 1;
+				print "Winner: Row " + str((index/3) + 1) + ' ' + TicTacToe.entries[index];
+			else:
+				index += 3;
+		found = 0;
+		while not found:
+			if(TicTacToe.entries[index] == TicTacToe.entries[index + 4] == TicTacToe.entries[index + 8] or
+				TicTacToe.entries[index + 2] == TicTacToe.entries[index + 4] == TicTacToe.entries[index + 6]): #diagonal
+				TicTacToe.gameOn = 0;
+				found = 1;
+				print "Winner: Diagonal " + TicTacToe.entries[index + 4];
+			else: found = 1;
+
+game = TicTacToe();
+game.displayBoard();
+
+while game.gameOn == 1:
+	playerHit = int(raw_input('ENTER A NUMBER BETWEEN 0-8 TO MARK BOARD: '));
+	if(game.turn % 2 == 0):
+		hit = 'O';
+		os.system('clear');
+		game.updateEntries(playerHit, hit);
+		game.displayBoard();
+		print "TURN: " + str(game.turn) + " O";
+		game.winCheck();
+	else:
+		hit = 'X';
+		os.system('clear');
+		game.updateEntries(playerHit, hit);
+		game.displayBoard();
+		print "TURN: " + str(game.turn) + " X";
+		game.winCheck();

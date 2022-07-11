@@ -22,11 +22,24 @@ class Snake:
         Setting 3 segments to be a white square one after the other to be the snake.
         """
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        """
+        Adds a new segment to the snake.
+            parameter position (Tuple): a x and y coordinate of the last segment of snake.
+        """
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
+
+    def extend(self):
+        """
+        Extends the snake with new segment at the end of snake.
+        """
+        self.add_segment(self.segments[-1].position())
 
     def move(self):
         """

@@ -1,4 +1,4 @@
-from turtle import Turtle
+sfrom turtle import Turtle
 ALIGN = "center"
 FONT = ("Arial", 40, "normal")
 START_BALL = (0, 250)

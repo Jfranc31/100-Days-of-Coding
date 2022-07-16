@@ -48,7 +48,6 @@ while game_is_on:
             game_is_on = False
             scoreboard.game_over()
         car.move_cars(scoreboard.num_of_level)
-        print(count)
 
     if tim.finish_line():
         scoreboard.change_score()

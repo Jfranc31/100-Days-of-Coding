@@ -7,9 +7,9 @@ class CoffeeMaker:
     """
     def __init__(self):
         self.resources = {
-            "water": 300,
-            "milk": 200,
-            "coffee": 100,
+            "water": 1000,
+            "milk": 1000,
+            "coffee": 300,
         }
 
     def report(self):

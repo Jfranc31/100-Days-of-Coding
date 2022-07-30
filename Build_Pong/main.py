@@ -6,7 +6,7 @@ import time
 import collisions
 
 WINNING_SCORE = 1
-SLEEP = 0.1
+SLEEP = 0.05
 DISTANCE_FROM_CENTER = 350
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ if __name__ == '__main__':
             drink = menu.find_drink(item)
             if coffee_maker.is_resource_sufficient(drink):
                 count += 1
-                options += f"{count}: " + item + " $" + str(drink.cost) + " \n"
+                options += f"{count}: " + item + " $" + str("%.2f" % round(drink.cost, 2)) + " \n"
             else:
                 count += 1
 
@@ -44,8 +44,11 @@ if __name__ == '__main__':
             if drink is None:
                 print("Not an option, try again.")
             else:
-                if coffee_maker.is_resource_sufficient(drink) and money_machine.make_payment(drink.cost):
-                    coffee_maker.make_coffee(drink)
+                if coffee_maker.is_resource_sufficient(drink):
+                    if money_machine.make_payment(drink.cost):
+                        coffee_maker.make_coffee(drink)
+                    else:
+                        print("Not an option, try again.")
                 else:
                     print("Not enough resources to make at the moment, try again.")
         else:

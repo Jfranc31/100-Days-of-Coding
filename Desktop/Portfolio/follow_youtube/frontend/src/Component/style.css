@@ -1,0 +1,299 @@
+.container{
+    background-color: #fff;
+    max-width: 500px;
+    max-height: 700px;
+    padding: 50px 20px;
+    width: 100%;
+    width: 400px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.container-home{
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+form input,form label{
+    font-size: 16px;
+    padding: 5px 5px;
+}
+form input{
+    margin-bottom: 20px;
+    border: 1px solid #000; 
+}
+form input:hover{
+    border-color: #001d3d;
+    border-radius: 2px;
+}
+.btn{
+    background-color: #001d3d;
+    padding: 5px 15px;
+    color:#fff;
+    font-size: 18px;
+    min-width: 150px;
+    margin: 5px;
+    border-radius: 100px;
+    transition: backgroundColor 1s;
+
+}
+.btn:hover{
+    background-color: #023047;
+    cursor: pointer;
+}
+.btn-container{
+    margin: 10px auto;
+}
+.username-home{
+    text-transform: capitalize;
+}
+
+
+
+
+
+/* Navbar.css */
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(31, 34, 53);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+  }
+  
+  .logo {
+    font-size: 25px;
+    color: white;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+  }
+  
+  .Navbar {
+    display: flex;
+    align-items: center; /* Align links vertically centered */
+  }
+  
+  .Navbar a {
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px; /* Adjust the margin between links */
+  }
+  
+  .Navbar a:hover {
+    color: orange;
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+  
+  .mobileview {
+    display: none;
+  }
+  
+
+
+/* Add these styles at the end of your CSS */
+
+/* Browse.css */
+
+.browse-container{
+  box-sizing: border-box;
+}
+
+.anime-list-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+  }
+  
+  .filter-container {
+    width: 250px; /* Adjust the width of the filter container as needed */
+    padding-right: 20px;
+    position: absolute;
+    left: 200px;
+    top: 380px; /* Adjust the top position as needed */
+  }
+  
+  .anime-list {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    list-style: none;
+    min-width: 0;
+    width: 100%;
+  }
+  
+  /* Style for genre filters */
+  .genre-filters {
+    margin-top: 10px;
+  }
+  
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+  
+  .search-container {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+  .genre-filters {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .genre-filters label {
+    margin-bottom: 5px; /* Adjust the margin as needed */
+  }
+  
+  .genre-filter-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .selected-genres {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px; /* Adjust the margin as needed */
+  }
+  
+  .selected-genre {
+    background-color: #ddd;
+    padding: 2px 5px;
+    margin-right: 5px; /* Adjust the margin as needed */
+    margin-bottom: 5px; /* Adjust the margin as needed */
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .selected-genre button {
+    margin-left: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: red;
+  }
+
+  .anime-list-container .anime-list {
+    margin-left: 20px; /* Adjust as needed */
+  }
+
+
+  .anime-card {
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 1rem;
+    height: auto;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px; /* Adjust margin as needed */
+    overflow: hidden; /* Hide overflow to prevent unwanted scrollbars */
+  }
+  
+  .img-container {
+    position: relative;
+    display: block;
+    overflow: auto;
+    border: 1px solid #ddd;
+    height: auto;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .anime-card .title-and-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Set the height of the background for title and progress */
+    background: rgba(25, 30, 39, 0.8);
+    z-index: 1; /* Ensure this layer is above the image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .anime-card .anime-title {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 5px; /* Adjust space between title and progress */
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .anime-card .progress {
+    font-size: 0.8rem;
+    color: #4caf50;
+    margin-top: 5px; /* Adjust space between title and progress */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .anime-card.expanded {
+    transform: scale(1.2);
+    border-color: #4caf50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .anime-card:hover {
+    transform: scale(1.1);
+    border-color: #4caf50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .anime-card .top-right-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #04aa6d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  /* Add any additional styling as needed */
+  
+  .modal-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+  
+  .modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+  }
+
+
+
+  
